@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulaire</title>
+  <style>
+    .toggle-switch {
+  position: relative;
+  display: inline-flex;
+  background: #efefef;
+  border-radius: 999px;
+  overflow: hidden;
+  padding: 4px;
+  width: 200px;
+  font-size: 16px;
+}
+
+.toggle-switch input[type="radio"] {
+  display: none;
+}
+
+.toggle-switch label {
+  flex: 1;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  background-color: #9DD129;
+  border-radius: 999px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+#crapaud:checked ~ .slider {
+  transform: translateX(100%);
+}
+/* Style de base pour le texte */
+.toggle-switch label {
+  color: black;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Quand le radio est sélectionné, le label correspondant devient blanc */
+#grenouille:checked + label {
+  color: white;
+}
+
+#crapaud:checked + label {
+  color: white;
+}
+
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      display: flex;
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .left {
+      flex: 1;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/f/f3/Hyla_arborea_1_%28Marek_Szczepanek%29.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: black;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .left-content {
+      background: white;
+      padding: 20px;
+    }
+
+    .left-content h2 {
+      margin: 0 0 10px;
+    }
+
+    .right {
+      flex: 1;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    .right h2 {
+      margin-top: 0;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .radio-group input[type="radio"] {
+      display: none;
+    }
+
+    .radio-group label {
+      padding: 8px 16px;
+      border-radius: 20px;
+      background-color: #EFEFEF;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 16px;
+    }
+
+    .radio-group input[type="radio"]:checked + label {
+      background-color: #9DD129;
+      color: white;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form-group input {
+      flex: 1;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      font-size: 0.9em;
+      margin: 10px 0;
+    }
+
+    .submit-button {
+      background-color: #a2d51e;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #8cc214;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left">
+    <div class="left-content">
+      <h2>MFM DIGITAL</h2>
+      <p>Rue Middelbourg 66, 1170 Watermael-Boitsfort</p>
+      <p>+32 2 880 96 92<br>info@mfmdigital.com</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <h2>CONTACTEZ-NOUS</h2>
+    <p>Notre agence vous promet une expertise personnalisée et un accompagnement sur-mesure pour la réalisation de votre site internet et/ou de votre application.</p>
+
+    <form>
+      <div class="toggle-switch">
+        <input type="radio" id="grenouille" name="genre" value="grenouille" checked>
+        <label for="grenouille">🐸 Grenouille</label>
+
+        <input type="radio" id="crapaud" name="genre" value="crapaud">
+        <label for="crapaud">🐸 Crapaud</label>
+
+        <div class="slider"></div>
+      </div>
+
+
+      <div class="form-group">
+        <input type="text" name="nom" placeholder="Nom*" required />
+        <input type="text" name="prenom" placeholder="Prénom*" required />
+      </div>
+
+      <input type="tel" name="telephone" placeholder="Numéro de téléphone*" required />
+      <input type="email" name="email" placeholder="Email*" required />
+      <input type="text" name="adresse" placeholder="Adresse*" required />
+
+      <div class="form-group">
+        <input type="text" name="code_postal" placeholder="Code Postal*" required />
+        <input type="text" name="ville" placeholder="Ville*" required />
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" required />
+        <label>&nbsp;J’accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux doigts agiles et brefs.</label>
+      </div>
+
+      <button class="submit-button" type="submit">ENVOYER</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
