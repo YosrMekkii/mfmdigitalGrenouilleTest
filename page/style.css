@@ -1,0 +1,212 @@
+.background-top {
+  width: 1440px;
+  height: 374px;
+  background-image: url('../assets/frog.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+.company-info {
+  position: absolute;
+  top: 304px;
+  left: 50px;
+  width: 400px;
+  height: 400px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/f/f3/Hyla_arborea_1_%28Marek_Szczepanek%29.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: black;
+}
+
+.company-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.company-content h2 {
+  margin: 0 0 10px;
+}
+
+.form-container {
+  position: absolute;
+  top: 304px;
+  left: 651px;
+  width: 584px;
+  height: 875px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 28px 0 rgba(28, 133, 166, 0.13);
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.form-title {
+  position: absolute;
+  top: 32px;   /* 336 - top du form-container */
+  left: 48px;  /* 699 - left du form-container */
+  width: 363px;
+  height: 24px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0; /* très important pour éviter les décalages inattendus */
+}
+
+.form-description {
+  position: absolute;
+  top: 76px;  /* Le titre est à 32px de top + 34px de height + ~10px de marge = 76px */
+  left: 48px;
+  width: 488px;
+  height: 77px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+}
+
+.toggle-switch {
+  position: absolute;
+  top: 197px;
+  left: 48px;
+  width: 312px;
+  height: 41px;
+  display: flex;
+  background: #efefef;
+  border-radius: 999px;
+  overflow: hidden;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.toggle-switch input[type="radio"] {
+  display: none;
+}
+.option-label {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #000000;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.option-label .icon {
+  position: absolute;
+  top: 10px;
+  width: 16px;
+  height: auto;
+}
+
+.icon-crapaud {
+  left: 25.07px;
+}
+
+.icon-grenouille {
+  left: 174px;
+}
+
+.toggle-switch label {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+  color: black;
+}
+
+.toggle-switch .slider {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  background-color: #9DD129;
+  border-radius: 999px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+#crapaud:checked ~ .slider {
+  transform: translateX(0%);
+}
+#grenouille:checked ~ .slider {
+  transform: translateX(100%);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.9em;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.checkbox input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.submit-button {
+  position: absolute;
+  background-color: #a2d51e;
+  color: white;
+  width: 198px;
+  height: 57px;
+  top: 754px;
+  left: 201px;
+  border: none;
+  cursor: pointer;
+  border-radius: 44px;
+}
+
+.submit-button:hover {
+  background-color: #8cc214;
+}
+
+
+
+  
+

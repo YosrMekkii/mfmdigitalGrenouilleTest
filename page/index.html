@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulaire</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="background-top"></div>
+
+  <div class="company-info">
+    <div class="company-content">
+      <h2>MFM DIGITAL</h2>
+      <p>Rue Middelbourg 66, 1170 Watermael-Boitsfort</p>
+      <p>+32 2 880 96 92<br>info@mfmdigital.com</p>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2 class="form-title">CONTACTEZ-NOUS</h2>
+    <p class="form-description">
+      Notre agence vous promet une expertise personnalisée et un accompagnement sur-mesure pour la réalisation de votre site internet et/ou de votre application.
+    </p>
+
+    
+  <div class="toggle-switch">
+    <input type="radio" id="crapaud" name="genre" value="crapaud" checked>
+    <label for="crapaud" class="option-label">
+      <img src="../assets/Group.png" alt="Crapaud" class="icon icon-crapaud">
+      <span class="option-text">Crapaud</span>
+    </label>
+
+    <input type="radio" id="grenouille" name="genre" value="grenouille">
+    <label for="grenouille" class="option-label">
+      <img src="../assets/Vector.png" alt="Grenouille" class="icon icon-grenouille">
+      <span class="option-text">Grenouille</span>
+    </label>
+
+    <div class="slider"></div>
+  </div>
+<form>
+
+      <div class="form-fields">
+        <div class="form-group two-columns">
+          <input type="text" name="nom" placeholder="Nom*" required />
+          <input type="text" name="prenom" placeholder="Prénom*" required />
+        </div>
+
+        <input type="tel" name="telephone" placeholder="Numéro de téléphone*" required />
+        <input type="email" name="email" placeholder="Email*" required />
+        <input type="text" name="adresse" placeholder="Adresse*" required />
+
+        <div class="form-group two-columns">
+          <input type="text" name="code_postal" placeholder="Code Postal*" required />
+          <input type="text" name="ville" placeholder="Ville*" required />
+        </div>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" required />
+        <label>J'accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux doigts agiles et brefs.</label>
+      </div>
+
+   
+
+      <button class="submit-button" type="submit">ENVOYER</button>
+    </form>
+  </div>
+</body>
+</html>
