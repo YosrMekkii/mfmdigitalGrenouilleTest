@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Formulaire</title>
+  <title>Grenouille</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -21,48 +21,60 @@
     <p class="form-description">
       Notre agence vous promet une expertise personnalisée et un accompagnement sur-mesure pour la réalisation de votre site internet et/ou de votre application.
     </p>
-
+<form>
     
   <div class="toggle-switch">
     <input type="radio" id="crapaud" name="genre" value="crapaud" checked>
     <label for="crapaud" class="option-label">
-      <img src="../assets/Group.png" alt="Crapaud" class="icon icon-crapaud">
-      <span class="option-text">Crapaud</span>
+      <img src="../assets/Group.png" alt="Crapaud" class="icon-crapaud">
+      <span class="label-crapaud">Crapaud</span>
     </label>
 
     <input type="radio" id="grenouille" name="genre" value="grenouille">
     <label for="grenouille" class="option-label">
-      <img src="../assets/Vector.png" alt="Grenouille" class="icon icon-grenouille">
+      <img src="../assets/Vector.png" alt="Grenouille" class="icon-grenouille">
       <span class="option-text">Grenouille</span>
     </label>
 
     <div class="slider"></div>
   </div>
-<form>
-
-      <div class="form-fields">
-        <div class="form-group two-columns">
-          <input type="text" name="nom" placeholder="Nom*" required />
-          <input type="text" name="prenom" placeholder="Prénom*" required />
+        <div class="field-group">
+        <div class="field">
+          <label class="field-label" for="nom">Nom*</label>
+          <input type="text" id="nom" name="nom" class="field-input" required>
         </div>
-
-        <input type="tel" name="telephone" placeholder="Numéro de téléphone*" required />
-        <input type="email" name="email" placeholder="Email*" required />
-        <input type="text" name="adresse" placeholder="Adresse*" required />
-
-        <div class="form-group two-columns">
-          <input type="text" name="code_postal" placeholder="Code Postal*" required />
-          <input type="text" name="ville" placeholder="Ville*" required />
+        
+        <div class="field">
+          <label class="field-label" for="prenom">Prénom*</label>
+          <input type="text" id="prenom" name="prenom" class="field-input" required>
         </div>
+  </div>
+
+      <div class="phone-field">
+        <label class="field-label" for="telephone">Numéro de téléphone*</label>
+        <input type="tel" id="telephone" name="telephone" class="field-input" required>
+      </div>
+      
+      <div class="email-field">
+        <label class="field-label" for="email">Email*</label>
+        <input type="email" id="email" name="email" class="field-input" required>
       </div>
 
-      <div class="checkbox">
-        <input type="checkbox" required />
-        <label>J'accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux doigts agiles et brefs.</label>
+      <div class="address-field">
+        <label class="field-label" for="adresse">Adresse :</label>
+        <input type="text" id="adresse" name="adresse" class="field-input">
       </div>
-
-   
-
+      <div class="postal-city-group">
+        <div class="field postal-field">
+          <label class="field-label" for="codepostal">Code Postal :</label>
+          <input type="text" id="codepostal" name="codepostal" class="field-input">
+        </div>
+        
+        <div class="field city-field">
+          <label class="field-label" for="ville">Ville :</label>
+          <input type="text" id="ville" name="ville" class="field-input">
+        </div>
+      </div>
       <button class="submit-button" type="submit">ENVOYER</button>
     </form>
   </div>

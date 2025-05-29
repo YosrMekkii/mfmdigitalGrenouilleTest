@@ -118,11 +118,35 @@
 }
 
 .icon-crapaud {
-  left: 25.07px;
+  width: 21.89px;
+  height: 20.4px;
+  margin-right: 8px; /* espace entre l'icône et le texte */
+}
+.label-crapaud {
+  
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .icon-grenouille {
-  left: 174px;
+  width: 23px;
+  height: 21px;
+  margin-right: 8px;
+}
+.label-grenouille {
+  
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .toggle-switch label {
@@ -154,27 +178,191 @@
 #grenouille:checked ~ .slider {
   transform: translateX(100%);
 }
-
-form {
-  display: flex;
-  flex-direction: column;
+#crapaud:checked ~ .option-label[for="crapaud"],
+#grenouille:checked ~ .option-label[for="grenouille"] {
+  color: white;
 }
 
-.form-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 8px;
+#crapaud:checked ~ .option-label[for="grenouille"],
+#grenouille:checked ~ .option-label[for="crapaud"] {
+  color: black;
+}
+ /* Nouveaux styles pour les champs Nom et Prénom */
+    .field-group {
+      position: absolute;
+      top: 278px; /* 582px - 304px (top du form-container) */
+      left: 48px; /* 699px - 651px (left du form-container) */
+      display: flex;
+      gap: 48px; /* espace entre les deux champs */
+    }
+
+    .field {
+      position: relative;
+    }
+
+    .field-label {
+      font-family: Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 180%;
+      letter-spacing: 0;
+      color: #000000;
+      margin: 0;
+      margin-bottom: 32px; /* espace entre le label et l'input */
+    }
+
+    .field-input {
+      width: 220px;
+      height: 40px;
+      border: none;
+      border-bottom: 1.5px solid #D0D0D0;
+      background: transparent;
+      padding: 8px 0;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      color: #000000;
+      outline: none;
+      text-align: center;
+    }
+
+    .field-input:focus {
+      border-bottom-color: #9DD129;
+    }
+
+     /* Champ Numéro de téléphone */
+    .phone-field {
+      position: absolute;
+      top: 378px; /* sous les champs Nom/Prénom */
+      left: 48px;
+    }
+
+    .phone-field .field-label {
+      width: 181px;
+      height: 13px;
+      font-family: Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 180%;
+      letter-spacing: 0;
+      color: #000000;
+      margin: 0;
+      margin-bottom: 32px;
+    }
+
+    .phone-field .field-input {
+      width: 488px;
+      height: 40px;
+      border: none;
+      border-bottom: 1.5px solid #D0D0D0;
+      background: transparent;
+      padding: 8px 0;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      color: #000000;
+      outline: none;
+      text-align: center;
+    }
+    /* Champ Email */
+.email-field {
+  position: absolute;
+  top: 478px;
+  left: 48px;
 }
 
-.form-group input,
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-  flex: 1;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.email-field .field-label {
+  width: 53px;
+  height: 13px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.email-field .field-input {
+  width: 488px;
+  height: 40px;
+  border: none;
+  border-bottom: 1.5px solid #D0D0D0;
+  background: transparent;
+  padding: 8px 0;
+  font-family: Helvetica, sans-serif;
   font-size: 16px;
+  color: #000000;
+  outline: none;
+  text-align: center;
+}
+
+/* Champ Adresse */
+.address-field {
+  position: absolute;
+  top: 578px;
+  left: 48px;
+}
+
+.address-field .field-label {
+  width: 77px;
+  height: 13px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.address-field .field-input {
+  width: 488px;
+  height: 40px;
+  border: none;
+  border-bottom: 1.5px solid #D0D0D0;
+  background: transparent;
+  padding: 8px 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  text-align: center;
+}
+
+/* Champs Code Postal et Ville */
+.postal-city-group {
+  position: absolute;
+  top: 678px;
+  left: 48px;
+  display: flex;
+  gap: 48px;
+}
+
+.postal-field .field-label {
+  width: 109px;
+  height: 13px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.city-field .field-label {
+  width: 44px;
+  height: 13px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 32px;
 }
 
 .checkbox {
