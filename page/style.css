@@ -1,3 +1,9 @@
+.page-background {
+  width: 1440px;
+  height: 1254px; /* 374 + 880 */
+  margin: 0 auto;
+}
+
 .background-top {
   width: 1440px;
   height: 374px;
@@ -7,31 +13,106 @@
   margin: 0 auto;
 }
 
+.background-bottom {
+  
+  width: 1440px;
+  height: 880px;
+  background-color: #f5f5f5; /* ou une autre image de fond */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px; /* selon ton design */
+  box-sizing: border-box;
+}
+
 .company-info {
   position: absolute;
-  top: 304px;
-  left: 50px;
-  width: 400px;
-  height: 400px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/f/f3/Hyla_arborea_1_%28Marek_Szczepanek%29.jpg') no-repeat center center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
-  border-radius: 8px;
-  box-sizing: border-box;
+  top: 488px; /* Aligné avec Figma */
+  left: 205px;
+  width: 382px; /* Aligné avec le bloc de texte de contact */
+  height: auto;
   color: black;
+  box-sizing: border-box;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .company-content {
   background: white;
   padding: 20px;
-  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.company-content h2 {
-  margin: 0 0 10px;
+.company-title {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0;
+  color: #000000;
+}
+.company-content p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 230%;
+  margin: 0;
+  color: #000000;
+}
+.phone-hover {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+
+.phone-tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.phone-hover:hover .phone-tooltip {
+  display: block;
+}
+
+.phone-tooltip button,
+.phone-tooltip a {
+  background: #f0f0f0;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+
+.phone-tooltip button:hover,
+.phone-tooltip a:hover {
+  background: #dcdcdc;
+}
+
+
+.company-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.company-icons img {
+  width: 24px;
+  height: 24px;
 }
 
 .form-container {
@@ -43,8 +124,6 @@
   background-color: #FFFFFF;
   border-radius: 8px;
   box-shadow: 0 4px 28px 0 rgba(28, 133, 166, 0.13);
-  padding: 30px;
-  box-sizing: border-box;
 }
 
 .form-title {
@@ -62,9 +141,82 @@
   margin: 0; /* très important pour éviter les décalages inattendus */
 }
 
+.consent-checkbox {
+      position: absolute;
+      top: 671px; /* 975 - 304 (top du form-container) */
+      left: 48px; /* 699 - 651 (left du form-container) */
+      width: 488px;
+      height: 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .checkbox-wrapper {
+      position: relative;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .checkbox-outer {
+      box-sizing: border-box;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 0;
+      top: 0;
+      background: #FFFFFF;
+      border: 2px solid #9DD129;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .checkbox-inner {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      left: 4px;
+      top: 4px;
+      background: #9DD129;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 2px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .consent-checkbox input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    .consent-checkbox input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
+      opacity: 1;
+    }
+
+    .consent-text {
+      position: relative;
+      width: 454px;
+      height: 35px;
+      font-family: 'Helvetica', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 180%;
+      color: #000000;
+      margin: 0;
+      cursor: pointer;
+    }
+
+
 .form-description {
   position: absolute;
-  top: 76px;  /* Le titre est à 32px de top + 34px de height + ~10px de marge = 76px */
+  top: 76px;   /* 32 (top) + 24 (titre) + 20 (marge) */
   left: 48px;
   width: 488px;
   height: 77px;
@@ -79,7 +231,7 @@
 
 .toggle-switch {
   position: absolute;
-  top: 197px;
+  top: 193px; /* 76 + 77 + 40 */
   left: 48px;
   width: 312px;
   height: 41px;
@@ -121,6 +273,8 @@
   width: 21.89px;
   height: 20.4px;
   margin-right: 8px; /* espace entre l'icône et le texte */
+  filter: brightness(0) invert(1); /* Blanc par défaut */
+  transition: filter 0.3s ease;
 }
 .label-crapaud {
   
@@ -137,6 +291,8 @@
   width: 23px;
   height: 21px;
   margin-right: 8px;
+  filter: brightness(0); /* Noir par défaut */
+  transition: filter 0.3s ease;
 }
 .label-grenouille {
   
@@ -185,197 +341,280 @@
 
 #crapaud:checked ~ .option-label[for="grenouille"],
 #grenouille:checked ~ .option-label[for="crapaud"] {
-  color: black;
+  color:black;
 }
- /* Nouveaux styles pour les champs Nom et Prénom */
-    .field-group {
-      position: absolute;
-      top: 278px; /* 582px - 304px (top du form-container) */
-      left: 48px; /* 699px - 651px (left du form-container) */
-      display: flex;
-      gap: 48px; /* espace entre les deux champs */
-    }
 
-    .field {
-      position: relative;
-    }
+/* Changement de couleur des icônes */
+/* Icônes */
+#crapaud:checked ~ label[for="crapaud"] .icon-crapaud {
+  filter: brightness(0) invert(1);
+}
+#grenouille:checked ~ label[for="grenouille"] .icon-grenouille {
+  filter: brightness(0) invert(1);
+}
+#crapaud:checked ~ label[for="grenouille"] .icon-grenouille {
+  filter: brightness(0);
+}
+#grenouille:checked ~ label[for="crapaud"] .icon-crapaud {
+  filter: brightness(0);
+}
 
-    .field-label {
-      font-family: Helvetica, sans-serif;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 180%;
-      letter-spacing: 0;
-      color: #000000;
-      margin: 0;
-      margin-bottom: 32px; /* espace entre le label et l'input */
-    }
+/* Groupe des champs Nom et Prénom */
+.field-group {
+  position: relative;
+  width: 100%;
+}
 
-    .field-input {
-      width: 220px;
-      height: 40px;
-      border: none;
-      border-bottom: 1.5px solid #D0D0D0;
-      background: transparent;
-      padding: 8px 0;
-      font-family: Helvetica, sans-serif;
-      font-size: 16px;
-      color: #000000;
-      outline: none;
-      text-align: center;
-    }
-
-    .field-input:focus {
-      border-bottom-color: #9DD129;
-    }
-
-     /* Champ Numéro de téléphone */
-    .phone-field {
-      position: absolute;
-      top: 378px; /* sous les champs Nom/Prénom */
-      left: 48px;
-    }
-
-    .phone-field .field-label {
-      width: 181px;
-      height: 13px;
-      font-family: Helvetica, sans-serif;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 180%;
-      letter-spacing: 0;
-      color: #000000;
-      margin: 0;
-      margin-bottom: 32px;
-    }
-
-    .phone-field .field-input {
-      width: 488px;
-      height: 40px;
-      border: none;
-      border-bottom: 1.5px solid #D0D0D0;
-      background: transparent;
-      padding: 8px 0;
-      font-family: Helvetica, sans-serif;
-      font-size: 16px;
-      color: #000000;
-      outline: none;
-      text-align: center;
-    }
-    /* Champ Email */
-.email-field {
+/* Label Nom */
+.field-group .field:first-child .field-label {
   position: absolute;
-  top: 478px;
-  left: 48px;
+  width: 46px;
+  height: 13px;
+  left: 48px; /* 699 - 651 (left du form-container) */
+  top: 278px; /* 582 - 304 (top du form-container) */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  color: #000000;
+  margin: 0;
 }
 
+/* Champ input Nom */
+.field-group .field:first-child .field-input {
+  position: absolute;
+  width: 220px;
+  height: 32px;
+  left: 48px;
+  top: 295px; /* Juste en dessous du label */
+  border: none;
+  border-bottom: 1.5px solid #D0D0D0;
+  background: transparent;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Label Prénom */
+.field-group .field:last-child .field-label {
+  position: absolute;
+  width: 71px;
+  height: 13px;
+  left: 316px; /* 967 - 651 (left du form-container) */
+  top: 278px; /* 582 - 304 (top du form-container) */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  color: #000000;
+  margin: 0;
+}
+
+/* Champ input Prénom */
+.field-group .field:last-child .field-input {
+  position: absolute;
+  width: 220px;
+  height: 32px;
+  left: 316px;
+  top: 295px;
+  border: none;
+  border-bottom: 1.5px solid #DCDCDC;
+  background: transparent;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Label Numéro de téléphone */
+.phone-field .field-label {
+  position: absolute;
+  width: 181px;
+  height: 13px;
+  left: 48px; /* 699 - 651 */
+  top: 355px; /* 659 - 304 */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  color: #000000;
+  margin: 0;
+}
+
+/* Champ input Téléphone */
+.phone-field .field-input {
+  position: absolute;
+  width: 488px;
+  height: 32px;
+  left: 48px;
+  top: 372px;
+  border: none;
+  border-bottom: 1.5px solid #D0D0D0;
+  background: transparent;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Label Email */
 .email-field .field-label {
+  position: absolute;
   width: 53px;
   height: 13px;
-  font-family: Helvetica, sans-serif;
+  left: 48px; /* 699 - 651 */
+  top: 432px; /* 736 - 304 */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 180%;
-  letter-spacing: 0;
   color: #000000;
   margin: 0;
-  margin-bottom: 32px;
 }
 
+/* Champ input Email */
 .email-field .field-input {
+  position: absolute;
   width: 488px;
-  height: 40px;
+  height: 32px;
+  left: 48px;
+  top: 449px;
   border: none;
   border-bottom: 1.5px solid #D0D0D0;
   background: transparent;
-  padding: 8px 0;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-size: 16px;
-  color: #000000;
   outline: none;
-  text-align: center;
+  padding: 8px 0;
+  box-sizing: border-box;
 }
 
-/* Champ Adresse */
-.address-field {
-  position: absolute;
-  top: 578px;
-  left: 48px;
-}
-
+/* Label Adresse */
 .address-field .field-label {
+  position: absolute;
   width: 77px;
   height: 13px;
-  font-family: Helvetica, sans-serif;
+  left: 48px; /* 699 - 651 */
+  top: 509px; /* 813 - 304 */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 180%;
-  letter-spacing: 0;
   color: #000000;
   margin: 0;
-  margin-bottom: 32px;
 }
 
+/* Champ input Adresse */
 .address-field .field-input {
+  position: absolute;
   width: 488px;
-  height: 40px;
+  height: 32px;
+  left: 48px;
+  top: 526px;
   border: none;
   border-bottom: 1.5px solid #D0D0D0;
   background: transparent;
-  padding: 8px 0;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-size: 16px;
-  color: #000000;
   outline: none;
-  text-align: center;
+  padding: 8px 0;
+  box-sizing: border-box;
 }
 
-/* Champs Code Postal et Ville */
+/* Groupe Code Postal et Ville */
 .postal-city-group {
-  position: absolute;
-  top: 678px;
-  left: 48px;
-  display: flex;
-  gap: 48px;
+  position: relative;
+  width: 100%;
 }
 
-.postal-field .field-label {
+/* Label Code Postal */
+.postal-city-group .postal-field .field-label {
+  position: absolute;
   width: 109px;
   height: 13px;
-  font-family: Helvetica, sans-serif;
+  left: 48px; /* 699 - 651 */
+  top: 586px; /* 890 - 304 */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 180%;
-  letter-spacing: 0;
   color: #000000;
   margin: 0;
-  margin-bottom: 32px;
 }
 
-.city-field .field-label {
+/* Champ input Code Postal */
+.postal-city-group .postal-field .field-input {
+  position: absolute;
+  width: 220px;
+  height: 32px;
+  left: 48px;
+  top: 603px;
+  border: none;
+  border-bottom: 1.5px solid #D0D0D0;
+  background: transparent;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+/* Label Ville */
+.postal-city-group .city-field .field-label {
+  position: absolute;
   width: 44px;
   height: 13px;
-  font-family: Helvetica, sans-serif;
+  left: 316px; /* 967 - 651 */
+  top: 586px; /* 890 - 304 */
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 180%;
-  letter-spacing: 0;
   color: #000000;
   margin: 0;
-  margin-bottom: 32px;
 }
 
-.checkbox {
-  display: flex;
-  align-items: flex-start;
-  font-size: 0.9em;
-  gap: 8px;
-  margin: 20px 0;
+/* Champ input Ville */
+.postal-city-group .city-field .field-input {
+  position: absolute;
+  width: 220px;
+  height: 32px;
+  left: 316px;
+  top: 603px;
+  border: none;
+  border-bottom: 1.5px solid #D0D0D0;
+  background: transparent;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  outline: none;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+/* États de focus pour tous les champs */
+.field-input:focus {
+  border-bottom-color: #9DD129;
 }
 
-.checkbox input[type="checkbox"] {
-  margin-top: 2px;
+/* Styles généraux pour les champs requis 
+.field-input:required:invalid {
+  border-bottom-color: #ff4444;
 }
+
+.field-input:required:valid {
+  border-bottom-color: #9DD129;
+}
+  */
 
 .submit-button {
   position: absolute;
@@ -393,8 +632,4 @@
 .submit-button:hover {
   background-color: #8cc214;
 }
-
-
-
-  
 

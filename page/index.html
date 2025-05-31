@@ -3,43 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <title>MFM DIGITAL</title>
-  <link rel="icon" type="image/png" href="../assets/vecteezy_frog-head-clipart-design-illustration_46339516-removebg-preview.png">
+  <link rel="icon" type="image/png" href="../assets/frogino-removebg-preview.png">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <div class="page-background">
+    <!-- HEADER -->
   <div class="background-top"></div>
+    <!-- ZONE BASSE (formulaire + infos) -->
+  <div class="background-bottom">
 
   <div class="company-info">
     <div class="company-content">
-      <h2>MFM DIGITAL</h2>
+      <h2 class="company-title">MFM DIGITAL</h2>
       <p>Rue Middelbourg 66, 1170 Watermael-Boitsfort</p>
-      <p>+32 2 880 96 92<br>info@mfmdigital.com</p>
+    <p>
+      <span class="phone-hover">
+        <span id="phone-number">+32 2 880 96 92</span>
+        <div class="phone-tooltip">
+          <button onclick="copyPhone()">📋 Copier</button>
+          <a href="tel:+3228809692">📞 Appeler</a>
+        </div>
+      </span><br>
+       info@mfmdigital.com
+    </p>
+    <div class="company-icons">
+      <a href="https://www.facebook.com/mfmdigitalagency/" target="_blank">
+        <img src="../assets/uiw_facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/company/mfm-digital/" target="_blank">
+        <img src="../assets/linkedin.png" alt="linkedIn" />
+      </a>
+    </div>
     </div>
   </div>
-
+<form>
   <div class="form-container">
     <h2 class="form-title">CONTACTEZ-NOUS</h2>
     <p class="form-description">
       Notre agence vous promet une expertise personnalisée et un accompagnement sur-mesure pour la réalisation de votre site internet et/ou de votre application.
     </p>
-<form>
+
     
   <div class="toggle-switch">
     <input type="radio" id="crapaud" name="genre" value="crapaud" checked>
+    <input type="radio" id="grenouille" name="genre" value="grenouille">
+
+    <div class="slider"></div>
     <label for="crapaud" class="option-label">
       <img src="../assets/Group.png" alt="Crapaud" class="icon-crapaud">
       <span class="label-crapaud">Crapaud</span>
     </label>
 
-    <input type="radio" id="grenouille" name="genre" value="grenouille">
+    
     <label for="grenouille" class="option-label">
       <img src="../assets/Vector.png" alt="Grenouille" class="icon-grenouille">
       <span class="option-text">Grenouille</span>
     </label>
-
-    <div class="slider"></div>
   </div>
-        <div class="field-group">
+
+  <div class="field-group">
         <div class="field">
           <label class="field-label" for="nom">Nom*</label>
           <input type="text" id="nom" name="nom" class="field-input" required>
@@ -76,8 +99,23 @@
           <input type="text" id="ville" name="ville" class="field-input">
         </div>
       </div>
+       <div class="consent-checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <div class="checkbox-wrapper">
+              <div class="checkbox-outer"></div>
+              <div class="checkbox-inner"></div>
+            </div>
+            <label for="consent" class="consent-text">
+              J'accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux étangs d'Ixelles.
+            </label>
+          </div>
       <button class="submit-button" type="submit">ENVOYER</button>
     </form>
   </div>
+   </div> <!-- .background-bottom -->
+
+  </div> <!-- .page-background -->
+
+  <script src="scripts.js"></script>
 </body>
 </html>
