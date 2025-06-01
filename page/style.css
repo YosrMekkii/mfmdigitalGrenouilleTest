@@ -47,40 +47,68 @@
 .phone-hover {
   position: relative;
   display: inline-block;
-  border-bottom: 1px solid #000;
   cursor: pointer;
+  text-decoration: underline; /* soulignement direct */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px; /* optionnel, ajuste la distance */
 }
 
 .phone-tooltip {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 120%; /* légèrement en dessous */
   left: 0;
-  margin-top: 8px;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 8px;
+  background: black;
+  color: white;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 6px 10px;
   z-index: 1000;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.phone-tooltip button,
+.phone-tooltip a {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 4px 6px;
+  margin-right: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.phone-tooltip button:hover,
+.phone-tooltip a:hover {
+  text-decoration: underline;
 }
 
 .phone-hover:hover .phone-tooltip {
   display: block;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
 .phone-tooltip button,
 .phone-tooltip a {
   background: #f0f0f0;
   border: none;
-  padding: 6px 10px;
-  margin-right: 6px;
+  padding: 8px 12px;
+  margin-right: 8px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   text-decoration: none;
   color: black;
+  display: inline-block;
+  transition: background 0.2s ease;
 }
 
 .phone-tooltip button:hover,
@@ -127,76 +155,88 @@
 }
 
 .consent-checkbox {
-      position: absolute;
-      top: 671px; /* 975 - 304 (top du form-container) */
-      left: 48px; /* 699 - 651 (left du form-container) */
-      width: 488px;
-      height: 35px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
+  position: absolute;
+  top: 671px;
+  left: 48px;
+  width: 488px;
+  height: auto;
+  display: flex;
+  align-items: flex-start; /* pour pouvoir ajuster manuellement */
+  gap: 16px;
+}
 
-    .checkbox-wrapper {
-      position: relative;
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
+.checkbox-container {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 4px; /* <-- Ajuste ici pour centrer par rapport au texte */
+}
 
-    .checkbox-outer {
-      box-sizing: border-box;
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      left: 0;
-      top: 0;
-      background: #FFFFFF;
-      border: 2px solid #9DD129;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 5px;
-      cursor: pointer;
-    }
 
-    .checkbox-inner {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      left: 4px;
-      top: 4px;
-      background: #9DD129;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 2px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+.consent-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  z-index: 2; /* Assure que le label est bien déclenché */
+}
 
-    .consent-checkbox input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      width: 18px;
-      height: 18px;
-      margin: 0;
-    }
+.checkbox-wrapper {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1;
+}
 
-    .consent-checkbox input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
-      opacity: 1;
-    }
+.checkbox-outer {
+  box-sizing: border-box;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 0;
+  top: 0;
+  background: #FFFFFF;
+  border: 2px solid #9DD129;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
 
-    .consent-text {
-      position: relative;
-      width: 454px;
-      height: 35px;
-      font-family: 'Helvetica', sans-serif;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 180%;
-      color: #000000;
-      margin: 0;
-      cursor: pointer;
-    }
+.checkbox-inner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #9DD129;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+/* Afficher la coche quand input est coché */
+input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
+  opacity: 1;
+}
+
+.consent-text {
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 180%;
+  color: #000000;
+  margin: 0;
+  cursor: pointer;
+}
+
 
 
 .form-description {

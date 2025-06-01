@@ -20,14 +20,15 @@
       <div class="company-contact">
       <p>Rue Middelbourg 66, 1170 Watermael-Boitsfort</p>
     <p>
-      <span class="phone-hover">
-        <span id="phone-number">+32 2 880 96 92</span>
-        <div class="phone-tooltip">
-          <button onclick="copyPhone()">📋 Copier</button>
-          <a href="tel:+3228809692">📞 Appeler</a>
-        </div>
-      </span>
-    </p>
+  <span class="phone-hover">
+    +32 2 880 96 92
+    <span class="phone-tooltip">
+      <button onclick="copyPhone()">📋 Copier</button>
+      <a href="tel:+3228809692">📞 Appeler</a>
+    </span>
+  </span>
+</p>
+
     <p>info@mfmdigital.com</p>
     </div>
     <div class="company-icons">
@@ -102,16 +103,20 @@
           <input type="text" id="ville" name="ville" class="field-input">
         </div>
       </div>
-       <div class="consent-checkbox">
-            <input type="checkbox" id="consent" name="consent" required>
-            <div class="checkbox-wrapper">
-              <div class="checkbox-outer"></div>
-              <div class="checkbox-inner"></div>
-            </div>
-            <label for="consent" class="consent-text">
-              J'accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux étangs d'Ixelles.
-            </label>
-          </div>
+<div class="consent-checkbox">
+  <div class="checkbox-container">
+    <input type="checkbox" id="consent" name="consent" required>
+    <label for="consent" class="checkbox-wrapper">
+      <div class="checkbox-outer">
+        <div class="checkbox-inner"></div>
+      </div>
+    </label>
+  </div>
+  <label for="consent" class="consent-text">
+    J'accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux étangs d'Ixelles.
+  </label>
+</div>
+
       <button class="submit-button" type="submit">ENVOYER</button>
     </form>
   </div>
@@ -119,6 +124,6 @@
 
   </div> <!-- .page-background -->
 
-  <script src="scripts.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
