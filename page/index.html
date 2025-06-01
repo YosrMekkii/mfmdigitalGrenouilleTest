@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MFM DIGITAL</title>
   <link rel="icon" type="image/png" href="../assets/frogino-removebg-preview.png">
   <link rel="stylesheet" href="./style.css">
@@ -16,6 +17,7 @@
   <div class="company-info">
     <div class="company-content">
       <h2 class="company-title">MFM DIGITAL</h2>
+      <div class="company-contact">
       <p>Rue Middelbourg 66, 1170 Watermael-Boitsfort</p>
     <p>
       <span class="phone-hover">
@@ -24,9 +26,10 @@
           <button onclick="copyPhone()">📋 Copier</button>
           <a href="tel:+3228809692">📞 Appeler</a>
         </div>
-      </span><br>
-       info@mfmdigital.com
+      </span>
     </p>
+    <p>info@mfmdigital.com</p>
+    </div>
     <div class="company-icons">
       <a href="https://www.facebook.com/mfmdigitalagency/" target="_blank">
         <img src="../assets/uiw_facebook.png" alt="Facebook" />
@@ -99,7 +102,16 @@
           <input type="text" id="ville" name="ville" class="field-input">
         </div>
       </div>
-      
+       <div class="consent-checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <div class="checkbox-wrapper">
+              <div class="checkbox-outer"></div>
+              <div class="checkbox-inner"></div>
+            </div>
+            <label for="consent" class="consent-text">
+              J'accepte que mes données soient recueillies par une famille de crapauds ou de grenouilles aux étangs d'Ixelles.
+            </label>
+          </div>
       <button class="submit-button" type="submit">ENVOYER</button>
     </form>
   </div>
