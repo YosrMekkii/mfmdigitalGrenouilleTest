@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "mfm-digital-contact",
+  "builds": [
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
+    }
+  ]
+}
