@@ -2,8 +2,10 @@
 
 ![MFM Digital Logo](page/assets/frogino-removebg-preview.png)
 
-🌐 Déploiement en Ligne
-👉 Lien vers la démo : mfmdigital-grenouille-test.vercel.app
+## 🌐 Déploiement en Ligne
+
+👉 **Lien vers la démo** : [mfmdigital-grenouille-test.vercel.app](https://mfmdigital-grenouille-test.vercel.app/)
+
 
 ## 📋 Description du Projet
 
