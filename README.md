@@ -1,6 +1,9 @@
 # MFM Digital - Formulaire de Contact
 
-![MFM Digital Logo](assets/frogino-removebg-preview.png)
+![MFM Digital Logo](page/assets/frogino-removebg-preview.png)
+
+🌐 Déploiement en Ligne
+👉 Lien vers la démo : mfmdigital-grenouille-test.vercel.app
 
 ## 📋 Description du Projet
 
