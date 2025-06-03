@@ -1,6 +1,7 @@
+/* STYLES DESKTOP (gardés identiques) */
 .page-background {
   width: 1440px;
-  height: 1254px; /* 374 + 880 */
+  height: 1254px;
   margin: 0 auto;
 }
 
@@ -10,15 +11,14 @@
   background-image: url('../assets/frog.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   margin: 0 auto;
 }
 
 .background-bottom {
-  
   width: 1440px;
   height: 880px;
   background-color: white; 
-
 }
 
 .company-info {
@@ -37,6 +37,7 @@
   margin: 0;
   color: #000000;
 }
+
 .company-content p {
   font-size: 18px;
   font-weight: 300;
@@ -44,78 +45,61 @@
   margin: 0;
   color: #000000;
 }
+
 .phone-hover {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  text-decoration: underline; /* soulignement direct */
+  text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px; /* optionnel, ajuste la distance */
+  text-underline-offset: 1px;
+  color: black;
 }
 
 .phone-tooltip {
   display: none;
   position: absolute;
-  top: 120%; /* légèrement en dessous */
+  bottom: 100%;
   left: 0;
+  margin-bottom: 2px;
   background: black;
   color: white;
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 2px 2px;
   z-index: 1000;
   white-space: nowrap;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  font-size: 14px;
   animation: fadeIn 0.2s ease-in;
-}
-
-.phone-tooltip button,
-.phone-tooltip a {
-  background: transparent;
-  border: none;
-  color: white;
-  padding: 4px 6px;
-  margin-right: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.phone-tooltip button:hover,
-.phone-tooltip a:hover {
-  text-decoration: underline;
 }
 
 .phone-hover:hover .phone-tooltip {
   display: block;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
 .phone-tooltip button,
 .phone-tooltip a {
-  background: #f0f0f0;
+  background: black;
   border: none;
-  padding: 8px 12px;
-  margin-right: 8px;
+  padding: 2px 2px;
+  margin-right: 6px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   text-decoration: none;
-  color: black;
+  color: white;
   display: inline-block;
   transition: background 0.2s ease;
 }
 
 .phone-tooltip button:hover,
 .phone-tooltip a:hover {
-  background: #dcdcdc;
+  background: #333;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .company-icons {
   display: flex;
@@ -141,8 +125,8 @@
 
 .form-title {
   position: absolute;
-  top: 32px;   /* 336 - top du form-container */
-  left: 48px;  /* 699 - left du form-container */
+  top: 32px;
+  left: 48px;
   width: 363px;
   height: 24px;
   font-family: Helvetica, sans-serif;
@@ -151,7 +135,7 @@
   line-height: 120%;
   letter-spacing: 0;
   color: #000000;
-  margin: 0; /* très important pour éviter les décalages inattendus */
+  margin: 0;
 }
 
 .consent-checkbox {
@@ -161,7 +145,7 @@
   width: 488px;
   height: auto;
   display: flex;
-  align-items: flex-start; /* pour pouvoir ajuster manuellement */
+  align-items: flex-start;
   gap: 16px;
 }
 
@@ -170,9 +154,8 @@
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  margin-top: 4px; /* <-- Ajuste ici pour centrer par rapport au texte */
+  margin-top: 4px;
 }
-
 
 .consent-checkbox input[type="checkbox"] {
   position: absolute;
@@ -181,7 +164,7 @@
   width: 18px;
   height: 18px;
   margin: 0;
-  z-index: 2; /* Assure que le label est bien déclenché */
+  z-index: 2;
 }
 
 .checkbox-wrapper {
@@ -220,8 +203,6 @@
   transition: opacity 0.3s ease;
 }
 
-
-/* Afficher la coche quand input est coché */
 input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   opacity: 1;
 }
@@ -237,11 +218,9 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   cursor: pointer;
 }
 
-
-
 .form-description {
   position: absolute;
-  top: 76px;   /* 32 (top) + 24 (titre) + 20 (marge) */
+  top: 76px;
   left: 48px;
   width: 488px;
   height: 77px;
@@ -256,7 +235,7 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
 
 .toggle-switch {
   position: absolute;
-  top: 193px; /* 76 + 77 + 40 */
+  top: 193px;
   left: 48px;
   width: 312px;
   height: 41px;
@@ -271,6 +250,7 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
 .toggle-switch input[type="radio"] {
   display: none;
 }
+
 .option-label {
   flex: 1;
   position: relative;
@@ -287,22 +267,15 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   z-index: 1;
 }
 
-.option-label .icon {
-  position: absolute;
-  top: 10px;
-  width: 16px;
-  height: auto;
-}
-
 .icon-crapaud {
   width: 21.89px;
   height: 20.4px;
-  margin-right: 8px; /* espace entre l'icône et le texte */
-  filter: brightness(0) invert(1); /* Blanc par défaut */
+  margin-right: 8px;
+  filter: brightness(0) invert(1);
   transition: filter 0.3s ease;
 }
+
 .label-crapaud {
-  
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -316,11 +289,11 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   width: 23px;
   height: 21px;
   margin-right: 8px;
-  filter: brightness(0); /* Noir par défaut */
+  filter: brightness(0);
   transition: filter 0.3s ease;
 }
-.label-grenouille {
-  
+
+.option-text {
   font-family: Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -356,9 +329,11 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
 #crapaud:checked ~ .slider {
   transform: translateX(0%);
 }
+
 #grenouille:checked ~ .slider {
   transform: translateX(100%);
 }
+
 #crapaud:checked ~ .option-label[for="crapaud"],
 #grenouille:checked ~ .option-label[for="grenouille"] {
   color: white;
@@ -366,37 +341,36 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
 
 #crapaud:checked ~ .option-label[for="grenouille"],
 #grenouille:checked ~ .option-label[for="crapaud"] {
-  color:black;
+  color: black;
 }
 
-/* Changement de couleur des icônes */
-/* Icônes */
 #crapaud:checked ~ label[for="crapaud"] .icon-crapaud {
   filter: brightness(0) invert(1);
 }
+
 #grenouille:checked ~ label[for="grenouille"] .icon-grenouille {
   filter: brightness(0) invert(1);
 }
+
 #crapaud:checked ~ label[for="grenouille"] .icon-grenouille {
   filter: brightness(0);
 }
+
 #grenouille:checked ~ label[for="crapaud"] .icon-crapaud {
   filter: brightness(0);
 }
 
-/* Groupe des champs Nom et Prénom */
 .field-group {
   position: relative;
   width: 100%;
 }
 
-/* Label Nom */
 .field-group .field:first-child .field-label {
   position: absolute;
   width: 46px;
   height: 13px;
-  left: 48px; /* 699 - 651 (left du form-container) */
-  top: 278px; /* 582 - 304 (top du form-container) */
+  left: 48px;
+  top: 278px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -406,13 +380,12 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Nom */
 .field-group .field:first-child .field-input {
   position: absolute;
   width: 220px;
   height: 32px;
   left: 48px;
-  top: 295px; /* Juste en dessous du label */
+  top: 295px;
   border: none;
   border-bottom: 1.5px solid #D0D0D0;
   background: transparent;
@@ -423,13 +396,12 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   box-sizing: border-box;
 }
 
-/* Label Prénom */
 .field-group .field:last-child .field-label {
   position: absolute;
   width: 71px;
   height: 13px;
-  left: 316px; /* 967 - 651 (left du form-container) */
-  top: 278px; /* 582 - 304 (top du form-container) */
+  left: 316px;
+  top: 278px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -439,7 +411,6 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Prénom */
 .field-group .field:last-child .field-input {
   position: absolute;
   width: 220px;
@@ -456,13 +427,12 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   box-sizing: border-box;
 }
 
-/* Label Numéro de téléphone */
 .phone-field .field-label {
   position: absolute;
   width: 181px;
   height: 13px;
-  left: 48px; /* 699 - 651 */
-  top: 355px; /* 659 - 304 */
+  left: 48px;
+  top: 355px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -472,7 +442,6 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Téléphone */
 .phone-field .field-input {
   position: absolute;
   width: 488px;
@@ -489,13 +458,12 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   box-sizing: border-box;
 }
 
-/* Label Email */
 .email-field .field-label {
   position: absolute;
   width: 53px;
   height: 13px;
-  left: 48px; /* 699 - 651 */
-  top: 432px; /* 736 - 304 */
+  left: 48px;
+  top: 432px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -505,7 +473,6 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Email */
 .email-field .field-input {
   position: absolute;
   width: 488px;
@@ -522,13 +489,12 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   box-sizing: border-box;
 }
 
-/* Label Adresse */
 .address-field .field-label {
   position: absolute;
   width: 77px;
   height: 13px;
-  left: 48px; /* 699 - 651 */
-  top: 509px; /* 813 - 304 */
+  left: 48px;
+  top: 509px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -538,7 +504,6 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Adresse */
 .address-field .field-input {
   position: absolute;
   width: 488px;
@@ -555,19 +520,17 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   box-sizing: border-box;
 }
 
-/* Groupe Code Postal et Ville */
 .postal-city-group {
   position: relative;
   width: 100%;
 }
 
-/* Label Code Postal */
 .postal-city-group .postal-field .field-label {
   position: absolute;
   width: 109px;
   height: 13px;
-  left: 48px; /* 699 - 651 */
-  top: 586px; /* 890 - 304 */
+  left: 48px;
+  top: 586px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -577,7 +540,6 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Code Postal */
 .postal-city-group .postal-field .field-input {
   position: absolute;
   width: 220px;
@@ -594,13 +556,12 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   box-sizing: border-box;
 }
 
-/* Label Ville */
 .postal-city-group .city-field .field-label {
   position: absolute;
   width: 44px;
   height: 13px;
-  left: 316px; /* 967 - 651 */
-  top: 586px; /* 890 - 304 */
+  left: 316px;
+  top: 586px;
   font-family: 'Helvetica', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -610,7 +571,6 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   margin: 0;
 }
 
-/* Champ input Ville */
 .postal-city-group .city-field .field-input {
   position: absolute;
   width: 220px;
@@ -626,20 +586,10 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   padding: 8px 0;
   box-sizing: border-box;
 }
-/* États de focus pour tous les champs */
+
 .field-input:focus {
   border-bottom-color: #9DD129;
 }
-
-/* Styles généraux pour les champs requis 
-.field-input:required:invalid {
-  border-bottom-color: #ff4444;
-}
-
-.field-input:required:valid {
-  border-bottom-color: #9DD129;
-}
-  */
 
 .submit-button {
   position: absolute;
@@ -658,3 +608,395 @@ input[type="checkbox"]:checked + .checkbox-wrapper .checkbox-inner {
   background-color: #8cc214;
 }
 
+/* MEDIA QUERIES POUR RESPONSIVE - CORRECTION COMPLÈTE */
+
+/* Tablettes grandes (1025px - 1439px) - Transition entre desktop et tablette */
+@media screen and (max-width: 1439px) and (min-width: 1025px) {
+  .page-background {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .background-top {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .background-bottom {
+    width: 100%;
+    height: auto;
+    min-height: 800px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  .company-info {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 380px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    margin: 0;
+    padding: 48px;
+    box-sizing: border-box;
+  }
+}
+
+/* Tablettes (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .page-background {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .background-top {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .background-bottom {
+    width: 100%;
+    height: auto;
+    min-height: 700px;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .company-info {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    order: 1;
+  }
+  
+  .form-container {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    order: 2;
+  }
+  
+  /* Repositionner tous les éléments du formulaire en relatif */
+  .form-title,
+  .form-description,
+  .toggle-switch,
+  .field-group .field:first-child .field-label,
+  .field-group .field:first-child .field-input,
+  .field-group .field:last-child .field-label,
+  .field-group .field:last-child .field-input,
+  .phone-field .field-label,
+  .phone-field .field-input,
+  .email-field .field-label,
+  .email-field .field-input,
+  .address-field .field-label,
+  .address-field .field-input,
+  .postal-city-group .postal-field .field-label,
+  .postal-city-group .postal-field .field-input,
+  .postal-city-group .city-field .field-label,
+  .postal-city-group .city-field .field-input,
+  .consent-checkbox,
+  .submit-button {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+  
+  .form-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    width: auto;
+    height: auto;
+  }
+  
+  .form-description {
+    margin-bottom: 30px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .toggle-switch {
+    margin-bottom: 30px;
+    width: 280px;
+  }
+  
+  .field-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .field-group .field {
+    flex: 1;
+  }
+  
+  .field-group .field .field-label,
+  .phone-field .field-label,
+  .email-field .field-label,
+  .address-field .field-label,
+  .postal-city-group .field .field-label {
+    display: block;
+    margin-bottom: 8px;
+    width: auto;
+    height: auto;
+  }
+  
+  .field-group .field .field-input,
+  .phone-field .field-input,
+  .email-field .field-input,
+  .address-field .field-input {
+    width: 100%;
+    margin-bottom: 25px;
+    height: 32px;
+  }
+  
+  .postal-city-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .postal-city-group .field {
+    flex: 1;
+  }
+  
+  .postal-city-group .field .field-input {
+    width: 100%;
+    height: 32px;
+  }
+  
+  .consent-checkbox {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .submit-button {
+    display: block;
+    margin: 0 auto;
+    left: auto;
+    top: auto;
+  }
+}
+
+/* Tablettes petites et mobiles grandes (481px - 767px) */
+@media screen and (max-width: 767px) {
+  .page-background {
+    width: 100%;
+    height: auto;
+  }
+  
+  .background-top {
+    height: 250px;
+  }
+  
+  .background-bottom {
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .company-info {
+    margin: 0;
+    padding: 15px;
+    max-width: 100%;
+  }
+  
+  .company-title {
+    font-size: 24px;
+  }
+  
+  .company-content p {
+    font-size: 16px;
+  }
+  
+  .form-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .form-description {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  
+  .toggle-switch {
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 25px;
+  }
+  
+  .field-group {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .field-group .field .field-label,
+  .phone-field .field-label,
+  .email-field .field-label,
+  .address-field .field-label,
+  .postal-city-group .field .field-label {
+    font-size: 16px;
+  }
+  
+  .postal-city-group {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .consent-checkbox {
+    margin-bottom: 25px;
+  }
+  
+  .consent-text {
+    font-size: 13px;
+  }
+  
+  .submit-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Mobiles (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .background-top {
+    height: 200px;
+  }
+  
+  .background-bottom {
+    padding: 10px;
+  }
+  
+  .form-container {
+    padding: 15px;
+  }
+  
+  .company-title {
+    font-size: 20px;
+  }
+  
+  .form-title {
+    font-size: 20px;
+  }
+  
+  .form-description {
+    font-size: 14px;
+  }
+  
+  .toggle-switch {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .option-label {
+    font-size: 16px;
+  }
+  
+  .consent-text {
+    font-size: 12px;
+  }
+}
+
+/* Très petits écrans (moins de 320px) */
+@media screen and (max-width: 319px) {
+  .background-top {
+    height: 180px;
+  }
+  
+  .background-bottom {
+    padding: 8px;
+  }
+  
+  .company-info {
+    padding: 10px;
+  }
+  
+  .form-container {
+    padding: 12px;
+  }
+  
+  .company-title {
+    font-size: 18px;
+  }
+  
+  .form-title {
+    font-size: 18px;
+  }
+  
+  .form-description {
+    font-size: 13px;
+  }
+  
+  .toggle-switch {
+    width: 100%;
+    max-width: 220px;
+  }
+  
+  .option-label {
+    font-size: 14px;
+  }
+  
+  .consent-text {
+    font-size: 11px;
+  }
+}
+
+/* Correction pour les écrans larges (plus de 1440px) */
+@media screen and (min-width: 1441px) {
+  .page-background {
+    max-width: 1440px;
+  }
+  
+  .background-top {
+    max-width: 1440px;
+  }
+  
+  .background-bottom {
+    max-width: 1440px;
+  }
+}
