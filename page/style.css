@@ -8,7 +8,7 @@
 .background-top {
   width: 1440px;
   height: 374px;
-  background-image: url('../assets/frog.png');
+  background-image: url('./assets/frog.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

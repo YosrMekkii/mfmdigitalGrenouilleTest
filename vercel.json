@@ -3,8 +3,14 @@
   "name": "mfm-digital-contact",
   "builds": [
     {
-      "src": "**/*",
+      "src": "page/index.html",
       "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/page/$1"
     }
   ]
 }
