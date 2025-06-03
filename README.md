@@ -35,18 +35,20 @@ L'implémentation traduit parfaitement la vision créative du design reflétant 
 
 ```
 mfm-digital-contact/
-├── index.html              # Page principale
-├── style.css              # Styles CSS responsifs
-├── script.js              # Fonctionnalités JavaScript
-├── assets/                # Ressources visuelles
-│   ├── frog.png          # Image de fond header
-│   ├── frogino-removebg-preview.png  # Logo favicon
-│   ├── Group.png         # Icône crapaud
-│   ├── Vector.png        # Icône grenouille
-│   ├── uiw_facebook.png  # Icône Facebook
-│   └── linkedin.png      # Icône LinkedIn
-├── README.md             # Documentation du projet
-└── package.json          # Configuration npm (optionnel)
+├── page/
+│   ├── assets/
+│   │   ├── frog.png # Image de fond header
+│   │   ├── frogino-removebg-preview.png # Logo favicon
+│   │   ├── Group.png # Icône crapaud
+│   │   ├── Vector.png # Icône grenouille
+│   │   ├── uiw_facebook.png # Icône Facebook
+│   │   └── linkedin.png # Icône LinkedIn
+│   ├── index.html # Page principale
+│   ├── style.css # Styles CSS responsifs
+│   └── script.js # Fonctionnalités JavaScript
+├── README.md # Documentation du projet
+└── package.json # Configuration npm 
+
 ```
 
 ## 🛠️ Technologies Utilisées
